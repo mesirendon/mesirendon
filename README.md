@@ -15,7 +15,7 @@
 
 ---
 
-### About me
+## About me
 
 I write software during the day and write words (and occasionally music) the rest of the time. My [blog](https://mesirendon.com) is where I think out loud — reflections, technical write-ups, and the occasional deep dive into whatever broke my build that week.
 
@@ -27,7 +27,17 @@ I write software during the day and write words (and occasionally music) the res
 
 ---
 
-### Featured projects
+## Latest blog posts
+
+<!-- BLOG-POST-LIST:START -->
+- [nvim-ghrelease](https://mesirendon.com/articles/nvim-ghrelease/)
+- [黄金国](https://mesirendon.com/wandering/colombia/sesquile/%E9%BB%84%E9%87%91%E5%9B%BD/)
+- [The Repertory](https://mesirendon.com/articles/the-repertory/)
+- [Changes to My Site](https://mesirendon.com/articles/changes-to-my-site/)
+- [VSCode Workspaces to Tmux Session](https://mesirendon.com/articles/vscode-workspaces-to-tmux-session/)
+<!-- BLOG-POST-LIST:END -->
+
+## Featured projects
 
 | Project | What it does |
 | --- | --- |
@@ -37,6 +47,8 @@ I write software during the day and write words (and occasionally music) the res
 
 ---
 
+## My GitHub in some numbers
+
 <div align="center">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=mesirendon&theme=nord&hide_border=true" alt="Mesi's GitHub streak" width="100%"/>
 <img src="./profile-summary-card-output/nord_dark/0-profile-details.svg" alt="Mesi's GitHub stats" width="100%"/>
@@ -44,14 +56,6 @@ I write software during the day and write words (and occasionally music) the res
 <img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="Mesi's Top Language by Commit" width="48%"/>
 <img src="./profile-summary-card-output/nord_dark/4-productive-time.svg" alt="Mesi's Productive Time" width="48%"/>
 </div>
-
-<!-- BLOG-POST-LIST:START -->
-- [nvim-ghrelease](https://mesirendon.com/articles/nvim-ghrelease/)
-- [黄金国](https://mesirendon.com/wandering/colombia/sesquile/%E9%BB%84%E9%87%91%E5%9B%BD/)
-- [The Repertory](https://mesirendon.com/articles/the-repertory/)
-- [Changes to My Site](https://mesirendon.com/articles/changes-to-my-site/)
-- [VSCode Workspaces to Tmux Session](https://mesirendon.com/articles/vscode-workspaces-to-tmux-session/)
-<!-- BLOG-POST-LIST:END -->
 
 <div align="center">
 
