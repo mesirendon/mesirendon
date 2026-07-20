@@ -16,8 +16,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          # Needs a classic PAT with read:user + repo scopes, saved as a repo secret.
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          # Prefers a classic PAT (read:user + repo) saved as the GH_TOKEN secret,
+          # which is required to include private-repo contributions. Falls back to
+          # the built-in token, which only sees public activity.
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         with:
           USERNAME: mesirendon
           BRANCH_NAME: "main"
