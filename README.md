@@ -30,7 +30,7 @@ I write software during the day and write words (and occasionally music) the res
 ### Featured projects
 
 | Project | What it does |
-|---|---|
+| --- | --- |
 | [**nvim-ghrelease**](https://github.com/mesirendon/nvim-ghrelease) | Create GitHub releases without leaving Neovim |
 | [**datastructures-and-algorithms-js**](https://github.com/mesirendon/datastructures-and-algorithms-js) | A compilation of the most common data structures & algorithms, implemented in JavaScript |
 | [**dotfiles**](https://github.com/mesirendon/dotfiles) | My personal dev environment — Neovim config, shell, and the rest |
@@ -38,8 +38,10 @@ I write software during the day and write words (and occasionally music) the res
 ---
 
 <div align="center">
-<img src="./generated/overview.svg" alt="Mesi's GitHub stats" width="48%"/>
-<img src="./generated/languages.svg" alt="Mesi's top languages" width="48%"/>
+<img src="./profile-summary-card-output/nord_dark/0-profile-details.svg" alt="Mesi's GitHub stats" width="48%"/>
+<img src="./profile-summary-card-output/nord_dark/1-repos-per-language.svg" alt="Mesi's Top Language by Repo" width="48%"/>
+<img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="Mesi's Top Language by Commit" width="48%"/>
+<img src="./profile-summary-card-output/nord_dark/4-productive-time.svg" alt="Mesi's Productive Time" width="48%"/>
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=mesirendon&theme=nord&hide_border=true" alt="Mesi's GitHub streak" height="165"/>
 </div>
 
