@@ -1,4 +1,4 @@
-name: Generate GitHub stats images
+name: GitHub-Profile-Summary-Cards
 on:
   schedule:
     # Runs every day at 3am UTC
@@ -6,11 +6,20 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  generate-stats:
-    name: Generate GitHub stats SVGs
+  build:
     runs-on: ubuntu-latest
+    name: generate-github-profile-summary-cards
+    permissions:
+      contents: write
+
     steps:
-      - name: Generate stats
-        uses: jstrieb/github-stats@master
-        with:
+      - uses: actions/checkout@v4
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          # Needs a classic PAT with read:user + repo scopes, saved as a repo secret.
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          USERNAME: mesirendon
+          BRANCH_NAME: "main"
+          THEME: nord_dark
+          AUTO_PUSH: true
