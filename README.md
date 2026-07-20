@@ -17,13 +17,18 @@
 
 ## About me
 
-I write software during the day and write words (and occasionally music) the rest of the time. My [blog](https://mesirendon.com) is where I think out loud — reflections, technical write-ups, and the occasional deep dive into whatever broke my build that week.
+I write software during the day and write words (and occasionally music) the rest
+of the time. My [blog](https://mesirendon.com) is where I think out loud:
+reflections, technical write-ups, and the occasional deep dive into whatever
+broke my build that week.
 
-- 🔭 Currently building and tinkering with **Neovim tooling**, **Hugo/Tailwind**, and whatever my blog's PostCSS pipeline decides to break next
+- 🔭 Currently building and tinkering with **Neovim tooling**, **Go**, and
+whatever my blog's pipeline decides to break next
 - 🎵 Arranging and composing on the side — sheet music lives on [MuseScore](https://musescore.com/mesirendon)
 - ✍️ Writing long-form reflections and technical notes at [mesirendon.com](https://mesirendon.com)
-- 🌱 Into data structures & algorithms, developer tooling, and making small workflows less annoying
-- 💬 Ask me about Neovim, Hugo, or why your PostCSS build can't find a native binary
+- 🌱 Into data structures & algorithms, developer tooling, and making small
+workflows less annoying
+- 💬 Ask me about Neovim, Go, or why it really does matter to test your code.
 
 ---
 
