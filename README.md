@@ -2,7 +2,7 @@
 
 # Hi, I'm Mesi 👋
 
-**Software engineer · writer · musician** — building things at [Modak](https://modak.com), writing at [mesirendon.com](https://mesirendon.com), based in Bogotá 🇨🇴
+**Software engineer · writer · musician** — building things at [Modak](https://www.modakmakers.com/), writing at [mesirendon.com](https://mesirendon.com), based in Bogotá 🇨🇴
 
 [![Blog](https://img.shields.io/badge/blog-mesirendon.com-5E81AC?style=for-the-badge&logo=hugo&logoColor=white)](https://mesirendon.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-5E81AC?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mesirendon/)
