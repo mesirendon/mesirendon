@@ -55,7 +55,6 @@ workflows less annoying
 ## My GitHub in some numbers
 
 <div align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=mesirendon&theme=nord&hide_border=true" alt="Mesi's GitHub streak" width="100%"/>
 <img src="./profile-summary-card-output/nord_dark/0-profile-details.svg" alt="Mesi's GitHub stats" width="100%"/>
 <img src="./profile-summary-card-output/nord_dark/1-repos-per-language.svg" alt="Mesi's Top Language by Repo" width="48%"/>
 <img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="Mesi's Top Language by Commit" width="48%"/>
