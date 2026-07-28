@@ -60,6 +60,9 @@ workflows less annoying
 <img src="./profile-summary-card-output/nord_dark/2-most-commit-language.svg" alt="Mesi's Top Language by Commit" width="49%"/>
 <img src="./profile-summary-card-output/nord_dark/3-stats.svg" alt="Mesi's General Stats" width="49%"/>
 <img src="./profile-summary-card-output/nord_dark/4-productive-time.svg" alt="Mesi's Productive Time" width="49%"/>
+
+<sub>Public activity only — day-job work lives in private repos and isn't counted here, so the real totals run quite a bit higher. Times are Bogotá (UTC−5).</sub>
+
 </div>
 
 <div align="center">

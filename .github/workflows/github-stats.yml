@@ -1,9 +1,14 @@
 name: GitHub-Profile-Summary-Cards
 on:
   schedule:
-    # Runs every day at 3am UTC
-    - cron: '0 3 * * *'
+    # Sunday 22:00 Bogotá / Monday 03:00 UTC
+    - cron: '0 3 * * 1'
   workflow_dispatch: {}
+
+# Prevents the git-push race between overlapping runs
+concurrency:
+  group: profile-summary-cards
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -14,14 +19,69 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+
+      - name: Fail fast if the PAT is missing
         env:
-          # Prefers a classic PAT (read:user + repo) saved as the GH_TOKEN secret,
-          # which is required to include private-repo contributions. Falls back to
-          # the built-in token, which only sees public activity.
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::GH_TOKEN secret is not set. The profile-details and stats" \
+                 "cards require a classic PAT with the read:user scope."
+            exit 1
+          fi
+
+      # Pinned to a commit SHA on purpose: upstream's "release" is a mutable
+      # branch, and this step receives GH_TOKEN. Bump deliberately after
+      # reviewing the diff — never track the moving ref.
+      - uses: vn7n24fzkq/github-profile-summary-cards@4a9822e91a20eae650b9591769569976f0d578ba # release @ 2026-07-23
+        env:
+          # Classic PAT with read:user ONLY — deliberately no `repo` scope, which
+          # would grant this third-party action read/write access to private
+          # modak-live repositories (and, via its locked-in security_events child
+          # scope, their vulnerability alerts).
+          #
+          # Trade-off: contributions in private repos are excluded, so the stats
+          # card undercounts by roughly 45%. That is intentional.
+          #
+          # The built-in GITHUB_TOKEN cannot be used at all here: it cannot read
+          # user.contributionsCollection, which fails the profile-details and
+          # stats cards with "Resource not accessible by integration".
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           USERNAME: mesirendon
           BRANCH_NAME: "main"
           THEME: nord_dark
-          AUTO_PUSH: true
+          UTC_OFFSET: "-5"      # Bogotá
+          AUTO_PUSH: false      # we commit ourselves, only if all cards exist
+
+      - name: Verify all five cards were generated
+        run: |
+          missing=0
+          for f in 0-profile-details 1-repos-per-language 2-most-commit-language \
+                   3-stats 4-productive-time; do
+            path="profile-summary-card-output/nord_dark/$f.svg"
+            if [ ! -s "$path" ]; then
+              echo "::error::Card not generated: $path"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "::error::Partial generation — discarding changes so existing" \
+                 "cards are not deleted from the repo."
+            git checkout -- profile-summary-card-output || true
+            git clean -fd profile-summary-card-output || true
+            exit 1
+          fi
+
+      - name: Commit and push cards
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile-summary-card-output
+          if git diff --staged --quiet; then
+            echo "Cards unchanged — nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore: update profile summary cards"
+          git pull --rebase --autostash origin main
+          git push origin main
